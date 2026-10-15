@@ -335,6 +335,7 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1350412310352502&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<base target="_blank">
 </head>
 <body>
 
@@ -749,12 +750,14 @@ function advanceFrom(n){
   showStep(stepIndex(n+1));
 }
 let advancing = null;
+function onPick(input){
+  const n = +input.closest('.step').dataset.step;
+  clearTimeout(advancing);
+  advancing = setTimeout(()=>advanceFrom(n), 220);
+}
 form.querySelectorAll('.step .opt input').forEach(input=>{
-  input.addEventListener('change',()=>{
-    const n = +input.closest('.step').dataset.step;
-    clearTimeout(advancing);
-    advancing = setTimeout(()=>advanceFrom(n), 220);
-  });
+  input.addEventListener('change', ()=>onPick(input));  // keyboard (arrow keys)
+  input.addEventListener('click',  ()=>onPick(input));  // mouse/touch, incl. re-tap of an already-checked option
 });
 form.querySelectorAll('[data-back]').forEach(btn=>{
   btn.addEventListener('click',()=>{
