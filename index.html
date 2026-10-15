@@ -201,24 +201,35 @@
   @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
   .step-label{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gold-edge);margin-bottom:6px}
   .step h4{font-size:1.3rem;font-weight:800;margin-bottom:20px;letter-spacing:-.01em}
-  .options{display:flex;flex-direction:column;gap:12px}
-  .options-row{flex-direction:row}
-  .options-row .opt{flex:1}
-  .step .options + h4{margin-top:28px}
+  .step h4{margin-bottom:4px}
+  .step-hint{font-size:.92rem;color:var(--ink-soft);margin-bottom:18px}
+  .options{display:flex;flex-direction:column;gap:10px}
   .opt{
-    display:flex;align-items:center;gap:14px;border:2px solid var(--line);border-radius:12px;
-    padding:16px 18px;cursor:pointer;transition:all .15s;font-weight:600;font-size:1rem;
+    position:relative;display:flex;align-items:center;gap:14px;width:100%;
+    background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;cursor:pointer;
+    transition:border-color .15s,transform .15s,box-shadow .15s,background .15s;color:var(--ink);
   }
-  .opt:hover{border-color:var(--navy);background:rgba(10,19,94,.03)}
-  .opt input{accent-color:var(--navy);width:20px;height:20px;flex:0 0 auto}
-  .opt.selected{border-color:var(--navy);background:rgba(10,19,94,.06)}
+  .opt:hover{border-color:var(--navy);transform:translateY(-1px);box-shadow:var(--shadow)}
+  .opt input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+  .opt:has(input:focus-visible){outline:3px solid var(--gold);outline-offset:2px}
+  .opt.selected{border-color:var(--gold);background:#fffaf0;box-shadow:0 0 0 3px rgba(255,189,89,.25)}
+  .o-ic{flex:0 0 44px;width:44px;height:44px;border-radius:12px;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center}
+  .o-ic svg{width:22px;height:22px}
+  .o-txt{flex:1;display:flex;flex-direction:column;line-height:1.3}
+  .o-txt strong{font-size:1.02rem;font-weight:800}
+  .o-txt small{font-size:.85rem;color:var(--ink-soft);margin-top:2px}
+  .o-go{width:20px;height:20px;flex:0 0 20px;color:var(--navy);transition:transform .15s}
+  .opt:hover .o-go,.opt.selected .o-go{transform:translateX(3px)}
   .field{margin-bottom:18px}
   .field label{display:block;font-weight:650;font-size:.95rem;margin-bottom:7px}
+  .in-wrap{position:relative}
+  .in-ic{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:9px;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;pointer-events:none}
+  .in-ic svg{width:16px;height:16px}
   .field input{
-    width:100%;padding:14px 16px;border:2px solid var(--line);border-radius:11px;font-size:1rem;
+    width:100%;padding:14px 16px 14px 56px;border:2px solid var(--line);border-radius:14px;font-size:1rem;
     font-family:inherit;transition:border-color .15s;
   }
-  .field input:focus{outline:none;border-color:var(--navy)}
+  .field input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(255,189,89,.25)}
   .form-nav{display:flex;justify-content:space-between;align-items:center;margin-top:26px;gap:14px}
   .btn-back{background:none;border:none;color:var(--ink-soft);font-weight:600;cursor:pointer;font-size:.95rem;padding:10px}
   .btn-back:hover{color:var(--ink)}
@@ -238,7 +249,7 @@
   .screen a{color:var(--navy);font-weight:700}
 
   /* ---------- FOOTER ---------- */
-  footer{background:var(--navy-deep);color:#fff;padding:44px 0 30px}
+  footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.08);color:#fff;padding:44px 0 30px}
   .foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
   .foot-col h5{font-size:.9rem;font-weight:750;margin-bottom:10px;color:var(--gold)}
   .foot-col p,.foot-col a{font-size:.9rem;color:var(--on-navy);text-decoration:none;display:block;margin-bottom:6px}
@@ -302,8 +313,8 @@
     .form-top h3{font-size:1.2rem}
     .form-body{padding:22px 18px}
     .step h4{font-size:1.15rem}
-    .opt{padding:14px}
     .form-nav .btn{flex:1;justify-content:center;padding:15px 18px}
+    .o-ic{flex-basis:40px;width:40px;height:40px}
     .foot-grid{flex-direction:column;gap:24px}
   }
 </style>
@@ -354,7 +365,7 @@
     <div class="form-card" id="form">
       <div class="form-top">
         <h3>Get your free solar &amp; battery quote</h3>
-        <p>5 quick questions. A local Gold Coast specialist will be in touch shortly.</p>
+        <p>5 quick questions. Takes about 60 seconds.</p>
         <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
       </div>
       <div class="form-body">
@@ -363,12 +374,13 @@
           <!-- STEP 1 -->
           <div class="step active" data-step="1">
             <div class="step-label">Step 1 of 5</div>
-            <h4>What are you interested in?</h4>
+            <h4>What would you like a quote on?</h4>
+            <p class="step-hint">Tap one to start. Free and no obligation.</p>
             <div class="options">
-              <label class="opt"><input type="radio" name="interested_in" value="Solar + Battery"><span>Solar + battery</span></label>
-              <label class="opt"><input type="radio" name="interested_in" value="Battery"><span>Adding a battery</span></label>
-              <label class="opt"><input type="radio" name="interested_in" value="Solar"><span>Solar panels only</span></label>
-              <label class="opt"><input type="radio" name="interested_in" value="Not sure"><span>Not sure yet, I'd like advice</span></label>
+              <label class="opt"><input type="radio" name="interested_in" value="Solar + Battery"><span class="o-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.3" y2="6.3"/><line x1="17.7" y1="17.7" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.3" y2="17.7"/><line x1="17.7" y1="6.3" x2="19.1" y2="4.9"/></svg></span><span class="o-txt"><strong>Solar + battery</strong><small>Use your solar day and night</small></span><svg class="o-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></label>
+              <label class="opt"><input type="radio" name="interested_in" value="Battery"><span class="o-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="18" height="11" rx="2"/><line x1="22" y1="11" x2="22" y2="14"/><polyline points="11 9 9 13 13 13 11 16"/></svg></span><span class="o-txt"><strong>Add a battery</strong><small>I already have solar</small></span><svg class="o-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></label>
+              <label class="opt"><input type="radio" name="interested_in" value="Solar"><span class="o-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="9" y1="4" x2="9" y2="16"/><line x1="15" y1="4" x2="15" y2="16"/><line x1="12" y1="16" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/></svg></span><span class="o-txt"><strong>Solar panels</strong><small>Start with solar only</small></span><svg class="o-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></label>
+              <label class="opt"><input type="radio" name="interested_in" value="Not sure"><span class="o-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span><span class="o-txt"><strong>Not sure yet</strong><small>I'd like some advice</small></span><svg class="o-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></label>
             </div>
             <p class="err">Please choose an option to continue.</p>
           </div>
@@ -377,9 +389,10 @@
           <div class="step" data-step="2">
             <div class="step-label">Step 2 of 5</div>
             <h4>Do you already have solar panels?</h4>
+            <p class="step-hint">This helps us size the right system.</p>
             <div class="options">
-              <label class="opt"><input type="radio" name="existing_solar" value="Yes"><span>Yes, I have solar</span></label>
-              <label class="opt"><input type="radio" name="existing_solar" value="No"><span>No, not yet</span></label>
+              <label class="opt"><input type="radio" name="existing_solar" value="Yes"><span class="o-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="9" y1="4" x2="9" y2="16"/><line x1="15" y1="4" x2="15" y2="16"/><line x1="12" y1="16" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/></svg></span><span class="o-txt"><strong>Yes, I have solar</strong><small>Panels already on the roof</small></span><svg class="o-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></label>
+              <label class="opt"><input type="radio" name="existing_solar" value="No"><span class="o-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span class="o-txt"><strong>No, not yet</strong><small>Starting from scratch</small></span><svg class="o-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></label>
             </div>
             <p class="err">Please choose an option to continue.</p>
             <div class="form-nav"><button type="button" class="btn-back" data-back>Back</button><span></span></div>
@@ -388,12 +401,13 @@
           <!-- STEP 3 -->
           <div class="step" data-step="3">
             <div class="step-label">Step 3 of 5</div>
-            <h4>What's your average quarterly electricity bill?</h4>
+            <h4>What's your average quarterly power bill?</h4>
+            <p class="step-hint">A rough guess is fine.</p>
             <div class="options">
-              <label class="opt"><input type="radio" name="average_quarterly_bill" value="Under $400"><span>Under $400</span></label>
-              <label class="opt"><input type="radio" name="average_quarterly_bill" value="$400–$600"><span>$400 to $600</span></label>
-              <label class="opt"><input type="radio" name="average_quarterly_bill" value="$600–$1,000"><span>$600 to $1,000</span></label>
-              <label class="opt"><input type="radio" name="average_quarterly_bill" value="Over $1,000"><span>Over $1,000</span></label>
+              <label class="opt"><input type="radio" name="average_quarterly_bill" value="Under $400"><span class="o-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span><span class="o-txt"><strong>Under $400</strong><small>Per quarter</small></span><svg class="o-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></label>
+              <label class="opt"><input type="radio" name="average_quarterly_bill" value="$400–$600"><span class="o-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span><span class="o-txt"><strong>$400 to $600</strong><small>Per quarter</small></span><svg class="o-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></label>
+              <label class="opt"><input type="radio" name="average_quarterly_bill" value="$600–$1,000"><span class="o-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span><span class="o-txt"><strong>$600 to $1,000</strong><small>Per quarter</small></span><svg class="o-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></label>
+              <label class="opt"><input type="radio" name="average_quarterly_bill" value="Over $1,000"><span class="o-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span><span class="o-txt"><strong>Over $1,000</strong><small>Per quarter</small></span><svg class="o-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></label>
             </div>
             <p class="err">Please choose an option to continue.</p>
             <div class="form-nav"><button type="button" class="btn-back" data-back>Back</button><span></span></div>
@@ -403,11 +417,12 @@
           <div class="step" data-step="4">
             <div class="step-label">Step 4 of 5</div>
             <h4>When are you looking to install?</h4>
+            <p class="step-hint">No pressure, it just helps us plan.</p>
             <div class="options">
-              <label class="opt"><input type="radio" name="purchase_timeframe" value="ASAP"><span>As soon as possible</span></label>
-              <label class="opt"><input type="radio" name="purchase_timeframe" value="Within 3 months"><span>Within 3 months</span></label>
-              <label class="opt"><input type="radio" name="purchase_timeframe" value="Within 6 months"><span>Within 6 months</span></label>
-              <label class="opt"><input type="radio" name="purchase_timeframe" value="Just researching"><span>Just researching for now</span></label>
+              <label class="opt"><input type="radio" name="purchase_timeframe" value="ASAP"><span class="o-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span><span class="o-txt"><strong>As soon as possible</strong><small>Ready to go</small></span><svg class="o-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></label>
+              <label class="opt"><input type="radio" name="purchase_timeframe" value="Within 3 months"><span class="o-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span><span class="o-txt"><strong>Within 3 months</strong><small>In the next few months</small></span><svg class="o-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></label>
+              <label class="opt"><input type="radio" name="purchase_timeframe" value="Within 6 months"><span class="o-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span><span class="o-txt"><strong>Within 6 months</strong><small>Later this year</small></span><svg class="o-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></label>
+              <label class="opt"><input type="radio" name="purchase_timeframe" value="Just researching"><span class="o-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span><span class="o-txt"><strong>Just researching</strong><small>Comparing my options</small></span><svg class="o-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></label>
             </div>
             <p class="err">Please choose an option to continue.</p>
             <div class="form-nav"><button type="button" class="btn-back" data-back>Back</button><span></span></div>
@@ -415,17 +430,18 @@
 
           <!-- STEP 5 -->
           <div class="step" data-step="5">
-            <div class="step-label">Last step</div>
-            <h4>Nearly done. Where should we send your quote?</h4>
-            <div class="field"><label for="f-name">Full name</label><input id="f-name" type="text" name="name" autocomplete="name" maxlength="120" placeholder="Your name"></div>
-            <div class="field"><label for="f-email">Email</label><input id="f-email" type="email" name="email" autocomplete="email" maxlength="200" placeholder="you@email.com"></div>
-            <div class="field"><label for="f-phone">Mobile</label><input id="f-phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="04XX XXX XXX"></div>
-            <div class="field"><label for="f-postcode">Postcode</label><input id="f-postcode" type="text" name="postcode" inputmode="numeric" autocomplete="postal-code" maxlength="4" placeholder="e.g. 4215"></div>
+            <div class="step-label">Step 5 of 5</div>
+            <h4>Last step. Where should we send your quote?</h4>
+            <p class="step-hint">A local specialist will be in touch to go through it with you.</p>
+            <div class="field"><label for="f-name">Full name</label><div class="in-wrap"><span class="in-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span><input id="f-name" type="text" name="name" autocomplete="name" maxlength="120" placeholder="Your name"></div></div>
+            <div class="field"><label for="f-email">Email</label><div class="in-wrap"><span class="in-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span><input id="f-email" type="email" name="email" autocomplete="email" maxlength="200" placeholder="you@email.com"></div></div>
+            <div class="field"><label for="f-phone">Mobile</label><div class="in-wrap"><span class="in-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><input id="f-phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="04XX XXX XXX"></div></div>
+            <div class="field"><label for="f-postcode">Postcode</label><div class="in-wrap"><span class="in-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><input id="f-postcode" type="text" name="postcode" inputmode="numeric" autocomplete="postal-code" maxlength="4" placeholder="e.g. 4215"></div></div>
             <div class="hp" aria-hidden="true"><label for="f-company">Company</label><input id="f-company" type="text" name="company" tabindex="-1" autocomplete="off"></div>
             <p class="err">Please fill in your name, a valid email, an Australian mobile or phone number and a 4 digit postcode.</p>
             <div class="form-nav">
               <button type="button" class="btn-back" data-back>Back</button>
-              <button type="submit" class="btn" id="submitBtn">Send My Free Quote</button>
+              <button type="submit" class="btn" id="submitBtn">Get My Free Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
             </div>
             <p class="secure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Your details are kept private and never sold.</p>
             <p class="consent">By submitting, you agree to CJN Solar contacting you about your quote. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
@@ -796,7 +812,7 @@ form.addEventListener('submit', async (e)=>{
   }catch(err){
     console.error(err);
     submitBtn.disabled = false;
-    submitBtn.textContent = 'Send My Free Quote';
+    submitBtn.textContent = 'Get My Free Quote';
     errEl.textContent = 'Something went wrong. Please try again or call us on 1300 969 574.';
     showErr(step,true);
   }
