@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gold Coast Solar &amp; Battery Quotes | CJN Solar</title>
+<meta name="description" content="Get a free, tailored solar and battery quote from CJN Solar. Hinen and Sigenergy systems, a 10 year workmanship warranty and bill monitoring. 13,500+ systems installed across the Gold Coast and South East Queensland." />
+<meta name="theme-color" content="#0A135E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#0A135E;
+    --navy-deep:#060c3f;
+    --navy-soft:#16207a;
+    --gold:#FFBD59;
+    --gold-dark:#f5a623;
+    --gold-edge:#c9821a;
+    --ink:#0b1033;
+    --ink-soft:#4a5070;
+    --line:#e3e5ef;
+    --bg:#ffffff;
+    --bg-soft:#f5f6fb;
+    --on-navy:#c9cde8;
+    --radius:14px;
+    --maxw:1080px;
+    --shadow:0 10px 30px rgba(10,19,94,.08);
+    --shadow-lg:0 20px 50px rgba(10,19,94,.16);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  svg{display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    background:var(--gold);color:var(--navy);
+    font-weight:800;font-size:1.05rem;
+    padding:16px 28px;border-radius:12px;border:none;cursor:pointer;
+    text-decoration:none;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;
+    box-shadow:0 6px 18px rgba(255,189,89,.3);
+  }
+  .btn:hover{background:var(--gold-dark);transform:translateY(-2px);box-shadow:0 10px 24px rgba(255,189,89,.4)}
+  .btn svg{width:18px;height:18px}
+  .eyebrow{
+    display:inline-block;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    font-size:.78rem;color:var(--navy);background:rgba(10,19,94,.07);
+    padding:6px 12px;border-radius:99px;
+  }
+  .eyebrow.on-dark{color:var(--gold);background:rgba(255,189,89,.12)}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:50;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .header-in{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .logo{display:block;flex:0 0 auto;line-height:0}
+  .logo img{height:58px;width:auto}
+  footer .logo img{height:64px}
+  .header-cta{display:flex;align-items:center;gap:18px}
+  .header-call{
+    display:none;align-items:center;justify-content:center;width:44px;height:44px;
+    border-radius:10px;border:2px solid var(--gold);color:var(--gold);text-decoration:none;
+  }
+  .header-call svg{width:20px;height:20px}
+  .header-phone{display:flex;align-items:center;gap:7px;font-weight:700;color:#fff;text-decoration:none;font-size:.98rem}
+  .header-phone svg{width:16px;height:16px;color:var(--gold)}
+  .header-btn{
+    background:var(--gold);color:var(--navy);font-weight:800;font-size:.92rem;
+    padding:11px 20px;border-radius:10px;text-decoration:none;transition:background .15s;white-space:nowrap;
+  }
+  .header-btn:hover{background:var(--gold-dark)}
+  .header-btn .short{display:none}
+  @media(max-width:420px){.header-btn .long{display:none}.header-btn .short{display:inline}}
+  @media(max-width:620px){
+    .header-phone{display:none}
+    .header-call{display:inline-flex}
+    .header-in{height:62px}
+    .header-cta{gap:10px}
+    .logo img{height:46px}
+    .header-btn{padding:11px 14px;font-size:.88rem}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:
+      radial-gradient(900px 500px at 88% -10%,rgba(255,189,89,.22),transparent 60%),
+      radial-gradient(700px 500px at -10% 110%,rgba(64,86,255,.25),transparent 60%),
+      var(--navy);
+    color:#fff;padding:60px 0 56px;position:relative;overflow:hidden;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+  .hero h1{
+    font-size:clamp(2.1rem,4.6vw,3.3rem);line-height:1.08;font-weight:900;
+    letter-spacing:-.02em;margin:18px 0 18px;
+  }
+  .hero h1 .hl{color:var(--gold)}
+  .hero p.lead{font-size:1.15rem;color:var(--on-navy);max-width:540px;margin:0 0 28px}
+  .hero-cta-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+  .btn-hero{
+    font-size:1.15rem;padding:19px 34px;
+    box-shadow:0 5px 0 var(--gold-edge),0 14px 30px rgba(255,189,89,.25);
+  }
+  .btn-hero:hover{transform:translateY(2px);box-shadow:0 3px 0 var(--gold-edge),0 10px 22px rgba(255,189,89,.25)}
+  .btn-hero:active{transform:translateY(5px);box-shadow:0 0 0 var(--gold-edge),0 6px 14px rgba(255,189,89,.2)}
+  .hero-note{font-size:.9rem;color:var(--on-navy)}
+  .hero-note strong{color:#fff}
+  .hero-stats{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12)}
+  .hero-stat strong{display:block;font-size:1.6rem;font-weight:900;color:var(--gold);letter-spacing:-.02em;line-height:1.1}
+  .hero-stat span{font-size:.86rem;color:var(--on-navy)}
+  .hero-visual{
+    background:#fff;color:var(--ink);border-radius:20px;padding:32px;
+    box-shadow:0 30px 60px rgba(0,0,0,.3);position:relative;
+  }
+  .hero-visual h3{font-size:1.2rem;font-weight:800;margin-bottom:6px}
+  .hero-visual .sub{font-size:.92rem;color:var(--ink-soft);margin-bottom:22px}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:34px}}
+
+  /* ---------- BRAND STRIP ---------- */
+  .brand-strip{background:var(--navy-deep);color:#fff;padding:18px 0}
+  .brand-in{display:flex;align-items:center;justify-content:center;gap:34px;flex-wrap:wrap;text-align:center}
+  .brand-item{display:flex;align-items:center;gap:10px;font-weight:600;font-size:.95rem}
+  .brand-item svg{width:20px;height:20px;color:var(--gold)}
+  @media(max-width:640px){.brand-in{gap:12px 22px}.brand-item{font-size:.85rem}}
+
+  /* ---------- SECTION SHELL ---------- */
+  section.block{padding:72px 0}
+  .section-head{text-align:center;max-width:680px;margin:0 auto 44px}
+  .section-head h2{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:850;letter-spacing:-.02em;line-height:1.15;margin:14px 0 14px}
+  .section-head p{font-size:1.1rem;color:var(--ink-soft)}
+
+  /* ---------- FEATURES ---------- */
+  .features{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .feature{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;
+    box-shadow:var(--shadow);
+  }
+  .f-ic{
+    width:48px;height:48px;border-radius:12px;background:var(--navy);color:var(--gold);
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+  }
+  .f-ic svg{width:24px;height:24px}
+  .feature h4{font-size:1.08rem;font-weight:800;margin-bottom:8px;letter-spacing:-.01em}
+  .feature p{font-size:.95rem;color:var(--ink-soft)}
+  @media(max-width:960px){.features{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.features{grid-template-columns:1fr}}
+
+  /* ---------- BRANDS ---------- */
+  .brands{background:var(--bg-soft)}
+  .brand-cards{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .brand-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow)}
+  .brand-card .name{font-size:1.6rem;font-weight:900;letter-spacing:-.02em;color:var(--navy);margin-bottom:4px}
+  .brand-card .kind{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gold-edge);margin-bottom:14px}
+  .brand-card p{color:var(--ink-soft);font-size:.98rem;margin-bottom:14px}
+  .brand-card ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .brand-card li{display:flex;gap:10px;align-items:flex-start;font-size:.95rem;font-weight:500}
+  .brand-card li svg{width:18px;height:18px;flex:0 0 18px;color:var(--navy);margin-top:2px}
+  .brands-note{text-align:center;color:var(--ink-soft);font-size:.95rem;margin-top:26px}
+  @media(max-width:760px){.brand-cards{grid-template-columns:1fr}}
+
+  /* ---------- VALUES ---------- */
+  .values{background:var(--navy);color:#fff}
+  .values .section-head h2{color:#fff}
+  .values .section-head p{color:var(--on-navy)}
+  .value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .value{border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:30px 26px;background:rgba(255,255,255,.03)}
+  .value .v-ic{width:44px;height:44px;color:var(--gold);margin-bottom:18px}
+  .value .v-ic svg{width:44px;height:44px}
+  .value h4{font-size:1.25rem;font-weight:800;margin-bottom:10px}
+  .value p{color:var(--on-navy);font-size:.98rem}
+  .value p strong{color:#fff}
+  @media(max-width:860px){.value-grid{grid-template-columns:1fr}}
+
+  /* ---------- PROCESS ---------- */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s}
+  .p-step{position:relative;padding:26px;border-radius:var(--radius);border:1px solid var(--line);background:#fff}
+  .p-step .num{
+    width:40px;height:40px;border-radius:10px;background:var(--gold);color:var(--navy);
+    display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.1rem;margin-bottom:14px;
+  }
+  .p-step h4{font-size:1.1rem;font-weight:800;margin-bottom:8px}
+  .p-step p{font-size:.96rem;color:var(--ink-soft)}
+  @media(max-width:860px){.steps{grid-template-columns:1fr}}
+
+  /* ---------- FORM ---------- */
+  .form-section{background:var(--bg-soft);scroll-margin-top:62px}
+  .form-card{
+    max-width:680px;margin:0 auto;background:#fff;border-radius:20px;
+    box-shadow:var(--shadow-lg);overflow:hidden;border:1px solid var(--line);
+  }
+  .form-top{background:var(--navy);color:#fff;padding:28px 32px}
+  .form-top h3{font-size:1.4rem;font-weight:850;margin-bottom:4px}
+  .form-top p{color:var(--on-navy);font-size:.96rem}
+  .progress{height:6px;background:rgba(255,255,255,.15);border-radius:99px;margin-top:20px;overflow:hidden}
+  .progress-bar{height:100%;width:20%;background:var(--gold);border-radius:99px;transition:width .35s ease}
+  .form-body{padding:32px}
+  .step{display:none;animation:fade .3s ease}
+  .step.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .step-label{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gold-edge);margin-bottom:6px}
+  .step h4{font-size:1.3rem;font-weight:800;margin-bottom:20px;letter-spacing:-.01em}
+  .options{display:flex;flex-direction:column;gap:12px}
+  .options-row{flex-direction:row}
+  .options-row .opt{flex:1}
+  .step .options + h4{margin-top:28px}
+  .opt{
+    display:flex;align-items:center;gap:14px;border:2px solid var(--line);border-radius:12px;
+    padding:16px 18px;cursor:pointer;transition:all .15s;font-weight:600;font-size:1rem;
+  }
+  .opt:hover{border-color:var(--navy);background:rgba(10,19,94,.03)}
+  .opt input{accent-color:var(--navy);width:20px;height:20px;flex:0 0 auto}
+  .opt.selected{border-color:var(--navy);background:rgba(10,19,94,.06)}
+  .field{margin-bottom:18px}
+  .field label{display:block;font-weight:650;font-size:.95rem;margin-bottom:7px}
+  .field input{
+    width:100%;padding:14px 16px;border:2px solid var(--line);border-radius:11px;font-size:1rem;
+    font-family:inherit;transition:border-color .15s;
+  }
+  .field input:focus{outline:none;border-color:var(--navy)}
+  .form-nav{display:flex;justify-content:space-between;align-items:center;margin-top:26px;gap:14px}
+  .btn-back{background:none;border:none;color:var(--ink-soft);font-weight:600;cursor:pointer;font-size:.95rem;padding:10px}
+  .btn-back:hover{color:var(--ink)}
+  .btn:disabled{opacity:.7;cursor:wait;transform:none}
+  .consent{font-size:.8rem;color:var(--ink-soft);margin-top:14px;text-align:center}
+  .consent a{color:var(--navy)}
+  .err{color:#c0392b;font-size:.88rem;margin-top:10px;font-weight:600;display:none}
+  /* bots fill every field; people never see this one */
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+  .screen{display:none;text-align:center;padding:20px 8px}
+  .screen.active{display:block;animation:fade .3s ease}
+  .screen .big-ic{display:flex;justify-content:center;margin-bottom:14px;color:var(--navy)}
+  .screen .big-ic svg{width:54px;height:54px}
+  .screen h4{font-size:1.5rem;font-weight:850;margin-bottom:12px}
+  .screen p{color:var(--ink-soft);font-size:1.05rem;max-width:440px;margin:0 auto 8px}
+  .screen a{color:var(--navy);font-weight:700}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--navy-deep);color:#fff;padding:44px 0 30px}
+  .foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+  .foot-col h5{font-size:.9rem;font-weight:750;margin-bottom:10px;color:var(--gold)}
+  .foot-col p,.foot-col a{font-size:.9rem;color:var(--on-navy);text-decoration:none;display:block;margin-bottom:6px}
+  .foot-col a:hover{color:#fff}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:30px;padding-top:20px;font-size:.8rem;color:#8d93bf;text-align:center;line-height:1.6}
+  .foot-bottom a{color:var(--on-navy)}
+
+  /* ---------- QUICK START (hero quiz) ---------- */
+  .qs-badge{display:inline-block;background:rgba(255,189,89,.22);color:#8a5a0c;font-weight:800;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:99px;margin-bottom:12px}
+  .qs-opts{display:flex;flex-direction:column;gap:12px}
+  .qs-opt{
+    display:flex;align-items:center;gap:14px;width:100%;text-align:left;font-family:inherit;
+    background:#fff;border:2px solid var(--line);border-radius:14px;padding:14px 16px;cursor:pointer;
+    transition:border-color .15s,transform .15s,box-shadow .15s;color:var(--ink);
+  }
+  .qs-opt:hover{border-color:var(--navy);transform:translateY(-1px);box-shadow:var(--shadow)}
+  .qs-opt:first-child{border-color:var(--gold);background:#fffaf0}
+  .qs-ic{flex:0 0 44px;width:44px;height:44px;border-radius:12px;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center}
+  .qs-ic svg{width:22px;height:22px}
+  .qs-txt{flex:1;display:flex;flex-direction:column}
+  .qs-txt strong{font-size:1.05rem;font-weight:800}
+  .qs-txt small{font-size:.85rem;color:var(--ink-soft)}
+  .qs-go{width:20px;height:20px;color:var(--navy);flex:0 0 20px}
+  .qs-trust{list-style:none;display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:18px;font-size:.84rem;font-weight:600;color:var(--ink-soft)}
+  .qs-trust li{display:flex;align-items:center;gap:6px}
+  .qs-trust svg{width:14px;height:14px;color:#1e9e5a}
+  .rebate-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,189,89,.14);border:1px solid rgba(255,189,89,.35);color:var(--gold);font-weight:700;font-size:.88rem;padding:8px 14px;border-radius:99px;margin-bottom:18px}
+  .rebate-pill svg{width:16px;height:16px;flex:0 0 16px}
+
+  .secure{display:flex;align-items:center;justify-content:center;gap:6px;font-size:.85rem;color:var(--ink-soft);margin-top:16px}
+  .secure svg{width:14px;height:14px}
+
+  /* ---------- FAQ ---------- */
+  .faq{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+  .faq details{border:1px solid var(--line);border-radius:12px;background:#fff;padding:0 20px}
+  .faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:18px 0;font-weight:700;font-size:1.02rem}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary svg{width:18px;height:18px;flex:0 0 18px;color:var(--navy);transition:transform .2s}
+  .faq details[open] summary svg{transform:rotate(180deg)}
+  .faq details p{color:var(--ink-soft);padding:0 0 18px;font-size:.98rem}
+
+  /* ---------- FINAL CTA ---------- */
+  .final-cta{background:var(--navy);color:#fff;text-align:center;padding:64px 0}
+  .final-cta h2{font-size:clamp(1.7rem,3.6vw,2.5rem);font-weight:900;letter-spacing:-.02em;margin-bottom:12px}
+  .final-cta p{color:var(--on-navy);font-size:1.08rem;max-width:560px;margin:0 auto 26px}
+  .final-cta .final-call{margin:16px auto 0;font-size:.95rem}
+  .final-cta .final-call a{color:var(--gold);font-weight:700;text-decoration:none}
+
+  /* ---------- STICKY MOBILE BAR ---------- */
+  .sticky-bar{display:none}
+  @media(max-width:620px){
+    .sticky-bar{
+      position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;gap:10px;
+      padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#fff;
+      box-shadow:0 -6px 20px rgba(10,19,94,.12);transform:translateY(110%);transition:transform .25s ease;
+    }
+    .sticky-bar.show{transform:none}
+    .sb-call{display:flex;align-items:center;justify-content:center;gap:6px;flex:0 0 auto;padding:0 16px;border:2px solid var(--navy);border-radius:12px;color:var(--navy);font-weight:800;text-decoration:none}
+    .sb-call svg{width:18px;height:18px}
+    .sb-quote{flex:1;justify-content:center;padding:14px 16px}
+    footer{padding-bottom:96px}
+  }
+
+  /* ---------- MOBILE ---------- */
+  @media(max-width:620px){
+    .wrap{padding:0 16px}
+    .hero{padding:36px 0 40px}
+    .hero h1{font-size:clamp(1.8rem,8vw,2.2rem)}
+    /* mobile: the quiz card is the CTA, so bring it straight under the headline */
+    .hero p.lead,.hero-cta-row,.hero-stats{display:none}
+    .hero-grid{gap:20px}
+    .rebate-pill{margin-bottom:0}
+    .hero-stats{gap:18px 24px}
+    .hero-stat strong{font-size:1.35rem}
+    .hero-visual{padding:24px 20px;border-radius:16px}
+    section.block{padding:48px 0}
+    .section-head{margin-bottom:28px}
+    .section-head p{font-size:1rem}
+    .brand-card,.value{padding:24px 20px}
+    .form-top{padding:22px 20px}
+    .form-top h3{font-size:1.2rem}
+    .form-body{padding:22px 18px}
+    .step h4{font-size:1.15rem}
+    .opt{padding:14px}
+    .form-nav .btn{flex:1;justify-content:center;padding:15px 18px}
+    .foot-grid{flex-direction:column;gap:24px}
+  }
+</style>
+<!-- Meta Pixel: paste CJN's pixel snippet here once you have it.
+     The form already fires fbq('track','Lead') after a lead is saved, if the pixel is present. -->
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="wrap header-in">
+    <a href="#" class="logo" aria-label="CJN Solar">
+      <img src="cjn-logo.png" alt="CJN Solar" width="600" height="250">
+    </a>
+    <div class="header-cta">
+      <a href="tel:1300969574" class="header-call" aria-label="Call CJN Solar on 1300 969 574">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+      <a href="tel:1300969574" class="header-phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        1300 969 574
+      </a>
+      <a href="#form" class="header-btn"><span class="long">Get a Free Quote</span><span class="short">Free Quote</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow on-dark">Gold Coast &bull; Solar + Battery</span>
+      <h1>Take back control of your power bill with <span class="hl">solar and battery built for your home.</span></h1>
+      <div class="rebate-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Federal battery rebate available now. It reduces every six months.</div>
+      <p class="lead">CJN Solar designs and installs tailored solar and battery systems for Gold Coast homeowners, so you use more of your own power and rely less on the grid. Get a free, no-obligation quote in under a minute.</p>
+      <div class="hero-cta-row">
+        <a href="#form" class="btn btn-hero">Get My Free Quote
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <div class="hero-note"><strong>No pushy sales.</strong><br>Honest advice, then you decide.</div>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>13,500+</strong><span>systems installed</span></div>
+        <div class="hero-stat"><strong>10 year</strong><span>workmanship warranty</span></div>
+        <div class="hero-stat"><strong>$0</strong><span>for your quote</span></div>
+      </div>
+    </div>
+    <div class="hero-visual" id="quickStart">
+      <div class="qs-badge">Free quote &bull; 60 seconds</div>
+      <h3>What would you like a quote on?</h3>
+      <div class="sub">Tap one to start. No obligation.</div>
+      <div class="qs-opts">
+        <button type="button" class="qs-opt" data-pick="Solar + Battery">
+          <span class="qs-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/></svg></span>
+          <span class="qs-txt"><strong>Solar + battery</strong><small>Most popular, biggest savings</small></span>
+          <svg class="qs-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button type="button" class="qs-opt" data-pick="Battery">
+          <span class="qs-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="18" height="11" rx="2"/><line x1="22" y1="11" x2="22" y2="14"/><polyline points="11 9 9 13 13 13 11 16"/></svg></span>
+          <span class="qs-txt"><strong>Add a battery</strong><small>I already have solar</small></span>
+          <svg class="qs-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button type="button" class="qs-opt" data-pick="Solar">
+          <span class="qs-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="9" y1="4" x2="9" y2="16"/><line x1="15" y1="4" x2="15" y2="16"/><line x1="12" y1="16" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/></svg></span>
+          <span class="qs-txt"><strong>Solar panels</strong><small>Start with solar only</small></span>
+          <svg class="qs-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+      <ul class="qs-trust">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Rebates applied</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 10 yr workmanship</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> No pushy sales</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BRAND STRIP ================= -->
+<div class="brand-strip">
+  <div class="wrap brand-in">
+    <div class="brand-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg> 10 Year Workmanship Warranty</div>
+    <div class="brand-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Southport Based, Gold Coast Local</div>
+    <div class="brand-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> 13,500+ Systems Installed</div>
+    <div class="brand-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="18" height="11" rx="2"/><line x1="22" y1="11" x2="22" y2="14"/><line x1="6" y1="11" x2="6" y2="14"/><line x1="10" y1="11" x2="10" y2="14"/></svg> Hinen &amp; Sigenergy Batteries</div>
+  </div>
+</div>
+
+<!-- ================= WHY CJN ================= -->
+<section class="block">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Why CJN Solar</span>
+      <h2>Quality installs that keep paying you back</h2>
+      <p>Everything you need to cut your bills and rely less on the grid, from a local team that stands behind its work.</p>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <div class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <h4>10 year workmanship warranty</h4>
+        <p>Our installs are covered for a full decade. If something we did isn't right, we come back and fix it.</p>
+      </div>
+      <div class="feature">
+        <div class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg></div>
+        <h4>Free, no-obligation quote</h4>
+        <p>Tell us about your home and bills and we'll put together a clear, itemised quote at no cost.</p>
+      </div>
+      <div class="feature">
+        <div class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h4>Bill monitoring</h4>
+        <p>See what your system produces, what you use and what you save, so you know it's doing its job.</p>
+      </div>
+      <div class="feature">
+        <div class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></div>
+        <h4>Tailored systems</h4>
+        <p>Every system is designed around your roof, your usage and your budget. No cookie-cutter packages.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BRANDS ================= -->
+<section class="block brands">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Battery Storage</span>
+      <h2>Proven battery brands we install</h2>
+      <p>Store your daytime solar and use it at night, when power costs the most.</p>
+    </div>
+    <div class="brand-cards">
+      <div class="brand-card">
+        <div class="name">Sigenergy</div>
+        <div class="kind">Premium all-in-one system</div>
+        <p>A modular, all-in-one solar and battery system built for homes that want to get as close to energy independent as possible.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Stackable capacity that grows with you</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Backup power during outages</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Live monitoring in the app</li>
+        </ul>
+      </div>
+      <div class="brand-card">
+        <div class="name">Hinen</div>
+        <div class="kind">Great value storage</div>
+        <p>Reliable home batteries that make storage affordable, so more of your solar goes into your home instead of back to the grid.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Strong value for money</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Sizes to suit most households</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> App monitoring of usage and savings</li>
+        </ul>
+      </div>
+    </div>
+    <p class="brands-note">Not sure which suits you? Your quote compares both for your home.</p>
+  </div>
+</section>
+
+<!-- ================= VALUES ================= -->
+<section class="block values">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow on-dark">Our Promise</span>
+      <h2>How we work</h2>
+      <p>The standards behind every CJN Solar install.</p>
+    </div>
+    <div class="value-grid">
+      <div class="value">
+        <div class="v-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><polyline points="8.2 13 7 22 12 19 17 22 15.8 13"/></svg></div>
+        <h4>Reliability</h4>
+        <p><strong>13,500+ systems installed.</strong> Our team delivers consistent, quality work you can count on, day in and day out.</p>
+      </div>
+      <div class="value">
+        <div class="v-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <h4>Safety</h4>
+        <p><strong>SAA accredited, fully licensed, and insured.</strong> We adhere to the highest safety standards on every single install.</p>
+      </div>
+      <div class="value">
+        <div class="v-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <h4>Integrity</h4>
+        <p><strong>No pushy sales. No hidden costs.</strong> We give you honest advice and let you decide what's right for your family.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section class="block">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How It Works</span>
+      <h2>From quote to install, simply</h2>
+    </div>
+    <div class="steps">
+      <div class="p-step"><div class="num">1</div><h4>Tell us about your home</h4><p>Answer five quick questions about your bills and what you're after. It takes under a minute.</p></div>
+      <div class="p-step"><div class="num">2</div><h4>Get your tailored quote</h4><p>A local CJN specialist calls to understand your usage, then designs a system and quote around it.</p></div>
+      <div class="p-step"><div class="num">3</div><h4>We install and monitor</h4><p>Our licensed team installs it properly, backed by a 10 year workmanship warranty, and you track the savings.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FORM ================= -->
+<section class="block form-section" id="form">
+  <div class="wrap">
+    <div class="form-card">
+      <div class="form-top">
+        <h3>Get Your Free Solar &amp; Battery Quote</h3>
+        <p>5 quick questions. A local Gold Coast specialist will be in touch shortly.</p>
+        <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+      </div>
+      <div class="form-body">
+        <form id="quoteForm" novalidate>
+
+          <!-- STEP 1 -->
+          <div class="step active" data-step="1">
+            <div class="step-label">Step 1 of 5</div>
+            <h4>What are you interested in?</h4>
+            <div class="options">
+              <label class="opt"><input type="radio" name="interested_in" value="Solar + Battery"><span>Solar + battery</span></label>
+              <label class="opt"><input type="radio" name="interested_in" value="Battery"><span>Adding a battery</span></label>
+              <label class="opt"><input type="radio" name="interested_in" value="Solar"><span>Solar panels only</span></label>
+              <label class="opt"><input type="radio" name="interested_in" value="Not sure"><span>Not sure yet, I'd like advice</span></label>
+            </div>
+            <p class="err">Please choose an option to continue.</p>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="step" data-step="2">
+            <div class="step-label">Step 2 of 5</div>
+            <h4>Do you already have solar panels?</h4>
+            <div class="options">
+              <label class="opt"><input type="radio" name="existing_solar" value="Yes"><span>Yes, I have solar</span></label>
+              <label class="opt"><input type="radio" name="existing_solar" value="No"><span>No, not yet</span></label>
+            </div>
+            <p class="err">Please choose an option to continue.</p>
+            <div class="form-nav"><button type="button" class="btn-back" data-back>Back</button><span></span></div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="step" data-step="3">
+            <div class="step-label">Step 3 of 5</div>
+            <h4>What's your average quarterly electricity bill?</h4>
+            <div class="options">
+              <label class="opt"><input type="radio" name="average_quarterly_bill" value="Under $400"><span>Under $400</span></label>
+              <label class="opt"><input type="radio" name="average_quarterly_bill" value="$400–$600"><span>$400 to $600</span></label>
+              <label class="opt"><input type="radio" name="average_quarterly_bill" value="$600–$1,000"><span>$600 to $1,000</span></label>
+              <label class="opt"><input type="radio" name="average_quarterly_bill" value="Over $1,000"><span>Over $1,000</span></label>
+            </div>
+            <p class="err">Please choose an option to continue.</p>
+            <div class="form-nav"><button type="button" class="btn-back" data-back>Back</button><span></span></div>
+          </div>
+
+          <!-- STEP 4 -->
+          <div class="step" data-step="4">
+            <div class="step-label">Step 4 of 5</div>
+            <h4>When are you looking to install?</h4>
+            <div class="options">
+              <label class="opt"><input type="radio" name="purchase_timeframe" value="ASAP"><span>As soon as possible</span></label>
+              <label class="opt"><input type="radio" name="purchase_timeframe" value="Within 3 months"><span>Within 3 months</span></label>
+              <label class="opt"><input type="radio" name="purchase_timeframe" value="Within 6 months"><span>Within 6 months</span></label>
+              <label class="opt"><input type="radio" name="purchase_timeframe" value="Just researching"><span>Just researching for now</span></label>
+            </div>
+            <p class="err">Please choose an option to continue.</p>
+            <div class="form-nav"><button type="button" class="btn-back" data-back>Back</button><span></span></div>
+          </div>
+
+          <!-- STEP 5 -->
+          <div class="step" data-step="5">
+            <div class="step-label">Last step</div>
+            <h4>Great news, you're a good fit. Where should we send your quote?</h4>
+            <div class="field"><label for="f-name">Full name</label><input id="f-name" type="text" name="name" autocomplete="name" maxlength="120" placeholder="Your name"></div>
+            <div class="field"><label for="f-email">Email</label><input id="f-email" type="email" name="email" autocomplete="email" maxlength="200" placeholder="you@email.com"></div>
+            <div class="field"><label for="f-phone">Mobile</label><input id="f-phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="04XX XXX XXX"></div>
+            <div class="field"><label for="f-postcode">Postcode</label><input id="f-postcode" type="text" name="postcode" inputmode="numeric" autocomplete="postal-code" maxlength="4" placeholder="e.g. 4215"></div>
+            <div class="hp" aria-hidden="true"><label for="f-company">Company</label><input id="f-company" type="text" name="company" tabindex="-1" autocomplete="off"></div>
+            <p class="err">Please fill in your name, a valid email, an Australian mobile or phone number and a 4 digit postcode.</p>
+            <div class="form-nav">
+              <button type="button" class="btn-back" data-back>Back</button>
+              <button type="submit" class="btn" id="submitBtn">Send My Free Quote</button>
+            </div>
+            <p class="secure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Your details are kept private and never sold.</p>
+            <p class="consent">By submitting, you agree to CJN Solar contacting you about your quote. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
+          </div>
+
+          <!-- OUT OF AREA -->
+          <div class="screen" data-screen="area">
+            <div class="big-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <h4>Thanks for your interest</h4>
+            <p>We currently install across the Gold Coast and South East Queensland, and that postcode looks to be outside our area.</p>
+            <p>If you think that's a mistake, give us a call on <a href="tel:1300969574">1300 969 574</a>.</p>
+          </div>
+
+          <!-- SUCCESS -->
+          <div class="screen" data-screen="success">
+            <div class="big-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+            <h4>Thanks, we've got your details</h4>
+            <p>A local CJN Solar specialist will be in touch shortly to talk through your free, tailored quote.</p>
+            <p style="margin-top:14px"><strong>Prefer to talk now?</strong> Call us on <a href="tel:1300969574">1300 969 574</a>.</p>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="block">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Questions</span>
+      <h2>Common questions</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Is the quote really free?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary><p>Yes. Your quote is free and there's no obligation to go ahead. We'll give you honest advice and the numbers, and you decide.</p></details>
+      <details><summary>Can I add a battery to my existing solar?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary><p>In most cases, yes. We'll check your current system and recommend a Hinen or Sigenergy battery that works with it, or let you know if an upgrade makes more sense.</p></details>
+      <details><summary>Are there rebates for batteries?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary><p>Yes. The federal Cheaper Home Batteries program reduces the upfront cost of eligible batteries, and solar systems attract STC incentives too. The battery rebate reduces every six months, so acting sooner generally saves more. Any rebate you're eligible for is applied in your quote.</p></details>
+      <details><summary>What does the 10 year workmanship warranty cover?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary><p>It covers the quality of our installation for 10 years. Panels, inverters and batteries also carry their own manufacturer warranties, which we'll explain in your quote.</p></details>
+      <details><summary>Which areas do you service?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary><p>We're based in Southport and install right across the Gold Coast, from Coomera and Helensvale down to Coolangatta and out to the hinterland, as well as the rest of South East Queensland.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="final-cta">
+  <div class="wrap">
+    <h2>Ready to cut your power bill?</h2>
+    <p>Get a free, tailored solar and battery quote from a local team with 13,500+ installs behind it.</p>
+    <a href="#form" class="btn btn-hero">Get My Free Quote
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+    <p class="final-call">or call <a href="tel:1300969574">1300 969 574</a></p>
+  </div>
+</section>
+
+<!-- ================= STICKY MOBILE BAR ================= -->
+<div class="sticky-bar" id="stickyBar">
+  <a href="tel:1300969574" class="sb-call" aria-label="Call CJN Solar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call</a>
+  <a href="#form" class="btn sb-quote">Get My Free Quote</a>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#" class="logo" aria-label="CJN Solar">
+          <img src="cjn-logo.png" alt="CJN Solar" width="600" height="250">
+        </a>
+        <p style="color:var(--on-navy);font-size:.9rem;margin-top:14px;max-width:290px">Residential solar and battery specialists servicing the Gold Coast and South East Queensland.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <a href="tel:1300969574">1300 969 574</a>
+        <a href="mailto:info@cjnsolar.com.au">info@cjnsolar.com.au</a>
+        <p>5/23 Margaret Street<br>Southport QLD 4215</p>
+      </div>
+      <div class="foot-col">
+        <h5>Hours</h5>
+        <p>Mon to Fri: 7am to 5pm</p>
+        <p>Sat: by appointment</p>
+        <p>Sun: closed</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      &copy; <span id="year"></span> CJN Solar. All rights reserved. &nbsp;|&nbsp; <a href="/privacy-policy/">Privacy Policy</a> &nbsp;|&nbsp; Savings and rebate outcomes vary by household and system. Figures are estimates and are confirmed in your quote.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script>
+/* =========================================================
+   CJN SOLAR: FREE QUOTE LANDING PAGE
+   ========================================================= */
+
+/* The publishable (anon) key is safe in the browser. RLS only lets it INSERT
+   leads, never read them back. The CRM key lives server side only, as the
+   CJN_CRM_API_KEY edge function secret. Never put either secret key here. */
+const SUPABASE_URL = 'https://mbefnausrztqjayvurae.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1iZWZuYXVzcnp0cWpheXZ1cmFlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE5NzE4MDYsImV4cCI6MjEwNzU0NzgwNn0.YaxpcpOtueKfKhHkrHSwsof2RXcxIRI3-Qw6uitJAKQ';
+const LEAD_SOURCE  = 'FB - Gold Coast Free Quote LP';
+
+const db = (window.supabase && SUPABASE_URL && SUPABASE_KEY)
+  ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, { auth: { persistSession: false } })
+  : null;
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const form = document.getElementById('quoteForm');
+const steps = [...form.querySelectorAll('.step')];
+const progressBar = document.getElementById('progressBar');
+let current = 0;
+const PAGE_LOADED = Date.now();
+
+/* --- capture ad tracking params on arrival --- */
+const params = new URLSearchParams(location.search);
+const tracking = {};
+['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid'].forEach(k=>{
+  const v = params.get(k);
+  if(v) tracking[k] = v.slice(0,200);
+});
+if(document.referrer) tracking.referrer = document.referrer.slice(0,300);
+tracking.page = (location.origin + location.pathname).slice(0,300);
+
+/* --- option selection styling --- */
+form.querySelectorAll('.opt input').forEach(input=>{
+  input.addEventListener('change',()=>{
+    const group = input.closest('.options');
+    group.querySelectorAll('.opt').forEach(o=>o.classList.remove('selected'));
+    input.closest('.opt').classList.add('selected');
+  });
+});
+
+/* --- navigation --- */
+function scrollToForm(){
+  document.getElementById('form').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showStep(i){
+  steps.forEach((s,idx)=>s.classList.toggle('active', idx===i));
+  progressBar.style.width = ((i+1)/steps.length*100) + '%';
+  current = i;
+  scrollToForm();
+}
+function val(name){
+  const el = form.querySelector(`[name="${name}"]:checked`);
+  return el ? el.value : null;
+}
+function showErr(step,show){
+  const e = step.querySelector('.err');
+  if(e) e.style.display = show ? 'block' : 'none';
+}
+function showScreen(which){
+  steps.forEach(s=>s.classList.remove('active'));
+  form.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  form.querySelector(`[data-screen="${which}"]`).classList.add('active');
+  progressBar.style.width = '100%';
+  scrollToForm();
+}
+
+function pick(name, value){
+  const input = form.querySelector(`[name="${name}"][value="${value}"]`);
+  input.checked = true;
+  input.dispatchEvent(new Event('change',{bubbles:true}));
+}
+const stepIndex = n => steps.findIndex(s => +s.dataset.step === n);
+
+/* one question per step: answering moves straight on.
+   "Adding a battery" means they already have solar, so skip that question. */
+function advanceFrom(n){
+  showErr(steps[current],false);
+  if(n===1 && val('interested_in')==='Battery'){ pick('existing_solar','Yes'); showStep(stepIndex(3)); return; }
+  showStep(stepIndex(n+1));
+}
+let advancing = null;
+form.querySelectorAll('.step .opt input').forEach(input=>{
+  input.addEventListener('change',()=>{
+    const n = +input.closest('.step').dataset.step;
+    clearTimeout(advancing);
+    advancing = setTimeout(()=>advanceFrom(n), 220);
+  });
+});
+form.querySelectorAll('[data-back]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const n = +steps[current].dataset.step;
+    if(n===3 && val('interested_in')==='Battery') showStep(stepIndex(1));
+    else showStep(current-1);
+  });
+});
+
+/* hero quick start: one tap answers step 1 and drops them into the form */
+document.querySelectorAll('[data-pick]').forEach(b=>{
+  b.addEventListener('click',()=>{
+    clearTimeout(advancing);
+    pick('interested_in', b.dataset.pick);
+    clearTimeout(advancing);
+    advanceFrom(1);
+  });
+});
+
+/* sticky mobile bar: show once the hero is passed, hide while the form is on screen */
+const stickyBar = document.getElementById('stickyBar');
+if('IntersectionObserver' in window){
+  let heroVisible = true, formVisible = false;
+  const update = ()=>stickyBar.classList.toggle('show', !heroVisible && !formVisible);
+  new IntersectionObserver(([e])=>{ heroVisible = e.isIntersecting; update(); }).observe(document.querySelector('.hero'));
+  new IntersectionObserver(([e])=>{ formVisible = e.isIntersecting; update(); }).observe(document.getElementById('form'));
+}
+
+/* --- submit --- */
+form.addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  const step = steps[current];
+  const errEl = step.querySelector('.err');
+  const name = form.elements.name.value.trim().replace(/\s+/g,' ');
+  const email = form.elements.email.value.trim();
+  /* send the phone as digits only, e.g. 0412345678 (+61 4.. becomes 04..) */
+  let phone = form.elements.phone.value.replace(/\D/g,'');
+  if(phone.startsWith('61') && phone.length === 11) phone = '0' + phone.slice(2);
+  const postcode = form.elements.postcode.value.trim();
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const phoneOk = /^0\d{9}$/.test(phone);
+  const postcodeOk = /^\d{4}$/.test(postcode);
+
+  if(!name || !emailOk || !phoneOk || !postcodeOk){
+    errEl.textContent = 'Please fill in your name, a valid email, an Australian mobile or phone number and a 4 digit postcode.';
+    showErr(step,true);
+    return;
+  }
+  showErr(step,false);
+
+  /* bots: filled the hidden field, or finished five steps in under 5 seconds */
+  if(form.elements.company.value || Date.now() - PAGE_LOADED < 5000){ showScreen('success'); return; }
+
+  /* Queensland postcodes start with 4 (and 9 for PO boxes); everything else is out of area */
+  if(!/^[49]/.test(postcode)){ showScreen('area'); return; }
+
+  const submitBtn = document.getElementById('submitBtn');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Submitting...';
+
+  try{
+    if(!db) throw new Error('Supabase is not configured (set SUPABASE_URL and SUPABASE_KEY).');
+
+    /* insert only, no read back. A database trigger forwards it to the CJN CRM. */
+    const { error } = await db.from('leads').insert({
+      name, email, phone, postcode,
+      average_quarterly_bill: val('average_quarterly_bill'),
+      existing_solar:         val('existing_solar'),
+      interested_in:          val('interested_in'),
+      purchase_timeframe:     val('purchase_timeframe'),
+      source:                 LEAD_SOURCE,
+      tracking
+    });
+    if(error) throw error;
+
+    /* Meta Pixel: count the lead only once it's actually saved */
+    if(window.fbq) fbq('track', 'Lead');
+
+    showScreen('success');
+  }catch(err){
+    console.error(err);
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send My Free Quote';
+    errEl.textContent = 'Something went wrong. Please try again or call us on 1300 969 574.';
+    showErr(step,true);
+  }
+});
+</script>
+</body>
+</html>
