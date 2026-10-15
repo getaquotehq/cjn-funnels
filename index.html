@@ -98,7 +98,7 @@
       var(--navy);
     color:#fff;padding:60px 0 56px;position:relative;overflow:hidden;
   }
-  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
   .hero h1{
     font-size:clamp(2.1rem,4.6vw,3.3rem);line-height:1.08;font-weight:900;
     letter-spacing:-.02em;margin:18px 0 18px;
@@ -117,12 +117,6 @@
   .hero-stats{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12)}
   .hero-stat strong{display:block;font-size:1.6rem;font-weight:900;color:var(--gold);letter-spacing:-.02em;line-height:1.1}
   .hero-stat span{font-size:.86rem;color:var(--on-navy)}
-  .hero-visual{
-    background:#fff;color:var(--ink);border-radius:20px;padding:32px;
-    box-shadow:0 30px 60px rgba(0,0,0,.3);position:relative;
-  }
-  .hero-visual h3{font-size:1.2rem;font-weight:800;margin-bottom:6px}
-  .hero-visual .sub{font-size:.92rem;color:var(--ink-soft);margin-bottom:22px}
   @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:34px}}
 
   /* ---------- BRAND STRIP ---------- */
@@ -191,17 +185,17 @@
   @media(max-width:860px){.steps{grid-template-columns:1fr}}
 
   /* ---------- FORM ---------- */
-  .form-section{background:var(--bg-soft);scroll-margin-top:62px}
+  .form-card{scroll-margin-top:80px;color:var(--ink)}
   .form-card{
-    max-width:680px;margin:0 auto;background:#fff;border-radius:20px;
-    box-shadow:var(--shadow-lg);overflow:hidden;border:1px solid var(--line);
+    width:100%;max-width:560px;margin:0 auto;background:#fff;border-radius:20px;
+    box-shadow:0 30px 60px rgba(0,0,0,.3);overflow:hidden;
   }
-  .form-top{background:var(--navy);color:#fff;padding:28px 32px}
+  .form-top{background:#fff;color:var(--ink);padding:26px 30px 0}
   .form-top h3{font-size:1.4rem;font-weight:850;margin-bottom:4px}
-  .form-top p{color:var(--on-navy);font-size:.96rem}
-  .progress{height:6px;background:rgba(255,255,255,.15);border-radius:99px;margin-top:20px;overflow:hidden}
+  .form-top p{color:var(--ink-soft);font-size:.94rem}
+  .progress{height:6px;background:var(--line);border-radius:99px;margin-top:20px;overflow:hidden}
   .progress-bar{height:100%;width:20%;background:var(--gold);border-radius:99px;transition:width .35s ease}
-  .form-body{padding:32px}
+  .form-body{padding:24px 30px 30px}
   .step{display:none;animation:fade .3s ease}
   .step.active{display:block}
   @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
@@ -252,25 +246,6 @@
   .foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:30px;padding-top:20px;font-size:.8rem;color:#8d93bf;text-align:center;line-height:1.6}
   .foot-bottom a{color:var(--on-navy)}
 
-  /* ---------- QUICK START (hero quiz) ---------- */
-  .qs-badge{display:inline-block;background:rgba(255,189,89,.22);color:#8a5a0c;font-weight:800;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:99px;margin-bottom:12px}
-  .qs-opts{display:flex;flex-direction:column;gap:12px}
-  .qs-opt{
-    display:flex;align-items:center;gap:14px;width:100%;text-align:left;font-family:inherit;
-    background:#fff;border:2px solid var(--line);border-radius:14px;padding:14px 16px;cursor:pointer;
-    transition:border-color .15s,transform .15s,box-shadow .15s;color:var(--ink);
-  }
-  .qs-opt:hover{border-color:var(--navy);transform:translateY(-1px);box-shadow:var(--shadow)}
-  .qs-opt:first-child{border-color:var(--gold);background:#fffaf0}
-  .qs-ic{flex:0 0 44px;width:44px;height:44px;border-radius:12px;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center}
-  .qs-ic svg{width:22px;height:22px}
-  .qs-txt{flex:1;display:flex;flex-direction:column}
-  .qs-txt strong{font-size:1.05rem;font-weight:800}
-  .qs-txt small{font-size:.85rem;color:var(--ink-soft)}
-  .qs-go{width:20px;height:20px;color:var(--navy);flex:0 0 20px}
-  .qs-trust{list-style:none;display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:18px;font-size:.84rem;font-weight:600;color:var(--ink-soft)}
-  .qs-trust li{display:flex;align-items:center;gap:6px}
-  .qs-trust svg{width:14px;height:14px;color:#1e9e5a}
   .rebate-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,189,89,.14);border:1px solid rgba(255,189,89,.35);color:var(--gold);font-weight:700;font-size:.88rem;padding:8px 14px;border-radius:99px;margin-bottom:18px}
   .rebate-pill svg{width:16px;height:16px;flex:0 0 16px}
 
@@ -319,12 +294,11 @@
     .rebate-pill{margin-bottom:0}
     .hero-stats{gap:18px 24px}
     .hero-stat strong{font-size:1.35rem}
-    .hero-visual{padding:24px 20px;border-radius:16px}
     section.block{padding:48px 0}
     .section-head{margin-bottom:28px}
     .section-head p{font-size:1rem}
     .brand-card,.value{padding:24px 20px}
-    .form-top{padding:22px 20px}
+    .form-top{padding:22px 18px 0}
     .form-top h3{font-size:1.2rem}
     .form-body{padding:22px 18px}
     .step h4{font-size:1.15rem}
@@ -377,32 +351,104 @@
         <div class="hero-stat"><strong>$0</strong><span>for your quote</span></div>
       </div>
     </div>
-    <div class="hero-visual" id="quickStart">
-      <div class="qs-badge">Free quote &bull; 60 seconds</div>
-      <h3>What would you like a quote on?</h3>
-      <div class="sub">Tap one to start. No obligation.</div>
-      <div class="qs-opts">
-        <button type="button" class="qs-opt" data-pick="Solar + Battery">
-          <span class="qs-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/></svg></span>
-          <span class="qs-txt"><strong>Solar + battery</strong><small>Use your solar day and night</small></span>
-          <svg class="qs-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
-        <button type="button" class="qs-opt" data-pick="Battery">
-          <span class="qs-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="18" height="11" rx="2"/><line x1="22" y1="11" x2="22" y2="14"/><polyline points="11 9 9 13 13 13 11 16"/></svg></span>
-          <span class="qs-txt"><strong>Add a battery</strong><small>I already have solar</small></span>
-          <svg class="qs-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
-        <button type="button" class="qs-opt" data-pick="Solar">
-          <span class="qs-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="9" y1="4" x2="9" y2="16"/><line x1="15" y1="4" x2="15" y2="16"/><line x1="12" y1="16" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/></svg></span>
-          <span class="qs-txt"><strong>Solar panels</strong><small>Start with solar only</small></span>
-          <svg class="qs-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
+    <div class="form-card" id="form">
+      <div class="form-top">
+        <h3>Get your free solar &amp; battery quote</h3>
+        <p>5 quick questions. A local Gold Coast specialist will be in touch shortly.</p>
+        <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
       </div>
-      <ul class="qs-trust">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Rebates applied</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 10 yr workmanship</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> No pushy sales</li>
-      </ul>
+      <div class="form-body">
+        <form id="quoteForm" novalidate>
+
+          <!-- STEP 1 -->
+          <div class="step active" data-step="1">
+            <div class="step-label">Step 1 of 5</div>
+            <h4>What are you interested in?</h4>
+            <div class="options">
+              <label class="opt"><input type="radio" name="interested_in" value="Solar + Battery"><span>Solar + battery</span></label>
+              <label class="opt"><input type="radio" name="interested_in" value="Battery"><span>Adding a battery</span></label>
+              <label class="opt"><input type="radio" name="interested_in" value="Solar"><span>Solar panels only</span></label>
+              <label class="opt"><input type="radio" name="interested_in" value="Not sure"><span>Not sure yet, I'd like advice</span></label>
+            </div>
+            <p class="err">Please choose an option to continue.</p>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="step" data-step="2">
+            <div class="step-label">Step 2 of 5</div>
+            <h4>Do you already have solar panels?</h4>
+            <div class="options">
+              <label class="opt"><input type="radio" name="existing_solar" value="Yes"><span>Yes, I have solar</span></label>
+              <label class="opt"><input type="radio" name="existing_solar" value="No"><span>No, not yet</span></label>
+            </div>
+            <p class="err">Please choose an option to continue.</p>
+            <div class="form-nav"><button type="button" class="btn-back" data-back>Back</button><span></span></div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="step" data-step="3">
+            <div class="step-label">Step 3 of 5</div>
+            <h4>What's your average quarterly electricity bill?</h4>
+            <div class="options">
+              <label class="opt"><input type="radio" name="average_quarterly_bill" value="Under $400"><span>Under $400</span></label>
+              <label class="opt"><input type="radio" name="average_quarterly_bill" value="$400–$600"><span>$400 to $600</span></label>
+              <label class="opt"><input type="radio" name="average_quarterly_bill" value="$600–$1,000"><span>$600 to $1,000</span></label>
+              <label class="opt"><input type="radio" name="average_quarterly_bill" value="Over $1,000"><span>Over $1,000</span></label>
+            </div>
+            <p class="err">Please choose an option to continue.</p>
+            <div class="form-nav"><button type="button" class="btn-back" data-back>Back</button><span></span></div>
+          </div>
+
+          <!-- STEP 4 -->
+          <div class="step" data-step="4">
+            <div class="step-label">Step 4 of 5</div>
+            <h4>When are you looking to install?</h4>
+            <div class="options">
+              <label class="opt"><input type="radio" name="purchase_timeframe" value="ASAP"><span>As soon as possible</span></label>
+              <label class="opt"><input type="radio" name="purchase_timeframe" value="Within 3 months"><span>Within 3 months</span></label>
+              <label class="opt"><input type="radio" name="purchase_timeframe" value="Within 6 months"><span>Within 6 months</span></label>
+              <label class="opt"><input type="radio" name="purchase_timeframe" value="Just researching"><span>Just researching for now</span></label>
+            </div>
+            <p class="err">Please choose an option to continue.</p>
+            <div class="form-nav"><button type="button" class="btn-back" data-back>Back</button><span></span></div>
+          </div>
+
+          <!-- STEP 5 -->
+          <div class="step" data-step="5">
+            <div class="step-label">Last step</div>
+            <h4>Nearly done. Where should we send your quote?</h4>
+            <div class="field"><label for="f-name">Full name</label><input id="f-name" type="text" name="name" autocomplete="name" maxlength="120" placeholder="Your name"></div>
+            <div class="field"><label for="f-email">Email</label><input id="f-email" type="email" name="email" autocomplete="email" maxlength="200" placeholder="you@email.com"></div>
+            <div class="field"><label for="f-phone">Mobile</label><input id="f-phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="04XX XXX XXX"></div>
+            <div class="field"><label for="f-postcode">Postcode</label><input id="f-postcode" type="text" name="postcode" inputmode="numeric" autocomplete="postal-code" maxlength="4" placeholder="e.g. 4215"></div>
+            <div class="hp" aria-hidden="true"><label for="f-company">Company</label><input id="f-company" type="text" name="company" tabindex="-1" autocomplete="off"></div>
+            <p class="err">Please fill in your name, a valid email, an Australian mobile or phone number and a 4 digit postcode.</p>
+            <div class="form-nav">
+              <button type="button" class="btn-back" data-back>Back</button>
+              <button type="submit" class="btn" id="submitBtn">Send My Free Quote</button>
+            </div>
+            <p class="secure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Your details are kept private and never sold.</p>
+            <p class="consent">By submitting, you agree to CJN Solar contacting you about your quote. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
+          </div>
+
+          <!-- OUT OF AREA -->
+          <div class="screen" data-screen="area">
+            <div class="big-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <h4>Thanks for your interest</h4>
+            <p>We currently install across the Gold Coast and South East Queensland, and that postcode looks to be outside our area.</p>
+            <p>If you think that's a mistake, give us a call on <a href="tel:1300969574">1300 969 574</a>.</p>
+          </div>
+
+          <!-- SUCCESS -->
+          <div class="screen" data-screen="success">
+            <div class="big-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+            <h4>Thanks, we've got your details</h4>
+            <p>A local CJN Solar specialist will be in touch shortly to talk through your free, tailored quote.</p>
+            <p style="margin-top:14px"><strong>Prefer to talk now?</strong> Call us on <a href="tel:1300969574">1300 969 574</a>.</p>
+          </div>
+
+        </form>
+      </div>
     </div>
   </div>
 </section>
@@ -522,111 +568,6 @@
   </div>
 </section>
 
-<!-- ================= FORM ================= -->
-<section class="block form-section" id="form">
-  <div class="wrap">
-    <div class="form-card">
-      <div class="form-top">
-        <h3>Get Your Free Solar &amp; Battery Quote</h3>
-        <p>5 quick questions. A local Gold Coast specialist will be in touch shortly.</p>
-        <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
-      </div>
-      <div class="form-body">
-        <form id="quoteForm" novalidate>
-
-          <!-- STEP 1 -->
-          <div class="step active" data-step="1">
-            <div class="step-label">Step 1 of 5</div>
-            <h4>What are you interested in?</h4>
-            <div class="options">
-              <label class="opt"><input type="radio" name="interested_in" value="Solar + Battery"><span>Solar + battery</span></label>
-              <label class="opt"><input type="radio" name="interested_in" value="Battery"><span>Adding a battery</span></label>
-              <label class="opt"><input type="radio" name="interested_in" value="Solar"><span>Solar panels only</span></label>
-              <label class="opt"><input type="radio" name="interested_in" value="Not sure"><span>Not sure yet, I'd like advice</span></label>
-            </div>
-            <p class="err">Please choose an option to continue.</p>
-          </div>
-
-          <!-- STEP 2 -->
-          <div class="step" data-step="2">
-            <div class="step-label">Step 2 of 5</div>
-            <h4>Do you already have solar panels?</h4>
-            <div class="options">
-              <label class="opt"><input type="radio" name="existing_solar" value="Yes"><span>Yes, I have solar</span></label>
-              <label class="opt"><input type="radio" name="existing_solar" value="No"><span>No, not yet</span></label>
-            </div>
-            <p class="err">Please choose an option to continue.</p>
-            <div class="form-nav"><button type="button" class="btn-back" data-back>Back</button><span></span></div>
-          </div>
-
-          <!-- STEP 3 -->
-          <div class="step" data-step="3">
-            <div class="step-label">Step 3 of 5</div>
-            <h4>What's your average quarterly electricity bill?</h4>
-            <div class="options">
-              <label class="opt"><input type="radio" name="average_quarterly_bill" value="Under $400"><span>Under $400</span></label>
-              <label class="opt"><input type="radio" name="average_quarterly_bill" value="$400–$600"><span>$400 to $600</span></label>
-              <label class="opt"><input type="radio" name="average_quarterly_bill" value="$600–$1,000"><span>$600 to $1,000</span></label>
-              <label class="opt"><input type="radio" name="average_quarterly_bill" value="Over $1,000"><span>Over $1,000</span></label>
-            </div>
-            <p class="err">Please choose an option to continue.</p>
-            <div class="form-nav"><button type="button" class="btn-back" data-back>Back</button><span></span></div>
-          </div>
-
-          <!-- STEP 4 -->
-          <div class="step" data-step="4">
-            <div class="step-label">Step 4 of 5</div>
-            <h4>When are you looking to install?</h4>
-            <div class="options">
-              <label class="opt"><input type="radio" name="purchase_timeframe" value="ASAP"><span>As soon as possible</span></label>
-              <label class="opt"><input type="radio" name="purchase_timeframe" value="Within 3 months"><span>Within 3 months</span></label>
-              <label class="opt"><input type="radio" name="purchase_timeframe" value="Within 6 months"><span>Within 6 months</span></label>
-              <label class="opt"><input type="radio" name="purchase_timeframe" value="Just researching"><span>Just researching for now</span></label>
-            </div>
-            <p class="err">Please choose an option to continue.</p>
-            <div class="form-nav"><button type="button" class="btn-back" data-back>Back</button><span></span></div>
-          </div>
-
-          <!-- STEP 5 -->
-          <div class="step" data-step="5">
-            <div class="step-label">Last step</div>
-            <h4>Nearly done. Where should we send your quote?</h4>
-            <div class="field"><label for="f-name">Full name</label><input id="f-name" type="text" name="name" autocomplete="name" maxlength="120" placeholder="Your name"></div>
-            <div class="field"><label for="f-email">Email</label><input id="f-email" type="email" name="email" autocomplete="email" maxlength="200" placeholder="you@email.com"></div>
-            <div class="field"><label for="f-phone">Mobile</label><input id="f-phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="04XX XXX XXX"></div>
-            <div class="field"><label for="f-postcode">Postcode</label><input id="f-postcode" type="text" name="postcode" inputmode="numeric" autocomplete="postal-code" maxlength="4" placeholder="e.g. 4215"></div>
-            <div class="hp" aria-hidden="true"><label for="f-company">Company</label><input id="f-company" type="text" name="company" tabindex="-1" autocomplete="off"></div>
-            <p class="err">Please fill in your name, a valid email, an Australian mobile or phone number and a 4 digit postcode.</p>
-            <div class="form-nav">
-              <button type="button" class="btn-back" data-back>Back</button>
-              <button type="submit" class="btn" id="submitBtn">Send My Free Quote</button>
-            </div>
-            <p class="secure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Your details are kept private and never sold.</p>
-            <p class="consent">By submitting, you agree to CJN Solar contacting you about your quote. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
-          </div>
-
-          <!-- OUT OF AREA -->
-          <div class="screen" data-screen="area">
-            <div class="big-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-            <h4>Thanks for your interest</h4>
-            <p>We currently install across the Gold Coast and South East Queensland, and that postcode looks to be outside our area.</p>
-            <p>If you think that's a mistake, give us a call on <a href="tel:1300969574">1300 969 574</a>.</p>
-          </div>
-
-          <!-- SUCCESS -->
-          <div class="screen" data-screen="success">
-            <div class="big-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-            <h4>Thanks, we've got your details</h4>
-            <p>A local CJN Solar specialist will be in touch shortly to talk through your free, tailored quote.</p>
-            <p style="margin-top:14px"><strong>Prefer to talk now?</strong> Call us on <a href="tel:1300969574">1300 969 574</a>.</p>
-          </div>
-
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ================= FAQ ================= -->
 <section class="block">
   <div class="wrap">
@@ -736,7 +677,9 @@ form.querySelectorAll('.opt input').forEach(input=>{
 
 /* --- navigation --- */
 function scrollToForm(){
-  document.getElementById('form').scrollIntoView({behavior:'smooth',block:'start'});
+  const card = document.getElementById('form');
+  const top = card.getBoundingClientRect().top;
+  if(top < 60 || top > innerHeight * .4) card.scrollIntoView({behavior:'smooth',block:'start'});
 }
 function showStep(i){
   steps.forEach((s,idx)=>s.classList.toggle('active', idx===i));
@@ -787,16 +730,6 @@ form.querySelectorAll('[data-back]').forEach(btn=>{
     const n = +steps[current].dataset.step;
     if(n===3 && val('interested_in')==='Battery') showStep(stepIndex(1));
     else showStep(current-1);
-  });
-});
-
-/* hero quick start: one tap answers step 1 and drops them into the form */
-document.querySelectorAll('[data-pick]').forEach(b=>{
-  b.addEventListener('click',()=>{
-    clearTimeout(advancing);
-    pick('interested_in', b.dataset.pick);
-    clearTimeout(advancing);
-    advanceFrom(1);
   });
 });
 
